@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const TVSchema = new mongoose.Schema(
+const MoviesSchema = new mongoose.Schema(
   {
     title: {
       type: "String",
@@ -55,10 +55,6 @@ const TVSchema = new mongoose.Schema(
       type: Number,
       required: [true, "Please provide a runtime eg. 100 for (100 minutes)"],
     },
-    numberOfSeasons: {
-      type: Number,
-      required: [true, "Please provide number of seasons"],
-    },
     studio: {
       type: String,
       maxlength: 200,
@@ -74,6 +70,6 @@ const TVSchema = new mongoose.Schema(
   { timestamps: true },
 );
 
-module.exports = mongoose.model("TV", TVSchema);
+module.exports = mongoose.model("Movie", MoviesSchema);
 // TODO: * add image upload support for poster
 // TODO: * decide on how to store list of items eg. movie staff members and add, same for streaming services
